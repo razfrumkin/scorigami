@@ -1,0 +1,303 @@
+[
+    {
+        "id": 1610612741,
+        "abbreviation": "CHI",
+        "nickname": "Bulls",
+        "city": "Chicago",
+        "isActive": true
+    },
+    {
+        "id": 1610612757,
+        "abbreviation": "POR",
+        "nickname": "Trail Blazers",
+        "city": "Portland",
+        "isActive": true
+    },
+    {
+        "id": 1610610029,
+        "abbreviation": "JET",
+        "nickname": "Jets",
+        "city": "Indianapolis",
+        "isActive": false
+    },
+    {
+        "id": 1610610033,
+        "abbreviation": "SHE",
+        "nickname": "Redskins",
+        "city": "Sheboygan",
+        "isActive": false
+    },
+    {
+        "id": 1610612761,
+        "abbreviation": "TOR",
+        "nickname": "Raptors",
+        "city": "Toronto",
+        "isActive": true
+    },
+    {
+        "id": 1610610025,
+        "abbreviation": "CHS",
+        "nickname": "Stags",
+        "city": "Chicago",
+        "isActive": false
+    },
+    {
+        "id": 1610612737,
+        "abbreviation": "ATL",
+        "nickname": "Hawks",
+        "city": "Atlanta",
+        "isActive": true
+    },
+    {
+        "id": 1610612760,
+        "abbreviation": "OKC",
+        "nickname": "Thunder",
+        "city": "Oklahoma City",
+        "isActive": true
+    },
+    {
+        "id": 1610610032,
+        "abbreviation": "PRO",
+        "nickname": "Steamrollers",
+        "city": "Providence",
+        "isActive": false
+    },
+    {
+        "id": 1610610028,
+        "abbreviation": "DEF",
+        "nickname": "Falcons",
+        "city": "Detroit",
+        "isActive": false
+    },
+    {
+        "id": 1610612756,
+        "abbreviation": "PHX",
+        "nickname": "Suns",
+        "city": "Phoenix",
+        "isActive": true
+    },
+    {
+        "id": 1610612740,
+        "abbreviation": "NOP",
+        "nickname": "Pelicans",
+        "city": "New Orleans",
+        "isActive": true
+    },
+    {
+        "id": 1610610035,
+        "abbreviation": "HUS",
+        "nickname": "Huskies",
+        "city": "Toronto",
+        "isActive": false
+    },
+    {
+        "id": 1610610023,
+        "abbreviation": "AND",
+        "nickname": "Packers",
+        "city": "Anderson",
+        "isActive": false
+    },
+    {
+        "id": 1610612747,
+        "abbreviation": "LAL",
+        "nickname": "Lakers",
+        "city": "Los Angeles",
+        "isActive": true
+    },
+    {
+        "id": 1610612751,
+        "abbreviation": "BKN",
+        "nickname": "Nets",
+        "city": "Brooklyn",
+        "isActive": true
+    },
+    {
+        "id": 1610612750,
+        "abbreviation": "MIN",
+        "nickname": "Timberwolves",
+        "city": "Minnesota",
+        "isActive": true
+    },
+    {
+        "id": 1610612746,
+        "abbreviation": "LAC",
+        "nickname": "Clippers",
+        "city": "Los Angeles",
+        "isActive": true
+    },
+    {
+        "id": 1610612766,
+        "abbreviation": "CHA",
+        "nickname": "Hornets",
+        "city": "Charlotte",
+        "isActive": true
+    },
+    {
+        "id": 1610610034,
+        "abbreviation": "BOM",
+        "nickname": "Bombers",
+        "city": "St. Louis",
+        "isActive": true
+    },
+    {
+        "id": 1610612765,
+        "abbreviation": "DET",
+        "nickname": "Pistons",
+        "city": "Detroit",
+        "isActive": true
+    },
+    {
+        "id": 1610610037,
+        "abbreviation": "WAT",
+        "nickname": "Hawks",
+        "city": "Waterloo",
+        "isActive": false
+    },
+    {
+        "id": 1610612749,
+        "abbreviation": "MIL",
+        "nickname": "Bucks",
+        "city": "Milwaukee",
+        "isActive": true
+    },
+    {
+        "id": 1610612753,
+        "abbreviation": "ORL",
+        "nickname": "Magic",
+        "city": "Orlando",
+        "isActive": true
+    },
+    {
+        "id": 1610612745,
+        "abbreviation": "HOU",
+        "nickname": "Rockets",
+        "city": "Houston",
+        "isActive": true
+    },
+    {
+        "id": 1610612744,
+        "abbreviation": "GSW",
+        "nickname": "Warriors",
+        "city": "Golden State",
+        "isActive": true
+    },
+    {
+        "id": 1610612752,
+        "abbreviation": "NYK",
+        "nickname": "Knicks",
+        "city": "New York",
+        "isActive": true
+    },
+    {
+        "id": 1610612748,
+        "abbreviation": "MIA",
+        "nickname": "Heat",
+        "city": "Miami",
+        "isActive": true
+    },
+    {
+        "id": 1610610036,
+        "abbreviation": "WAS",
+        "nickname": "Capitols",
+        "city": "Washington",
+        "isActive": false
+    },
+    {
+        "id": 1610612764,
+        "abbreviation": "WAS",
+        "nickname": "Wizards",
+        "city": "Washington",
+        "isActive": true
+    },
+    {
+        "id": 1610612738,
+        "abbreviation": "BOS",
+        "nickname": "Celtics",
+        "city": "Boston",
+        "isActive": true
+    },
+    {
+        "id": 1610612755,
+        "abbreviation": "PHI",
+        "nickname": "76ers",
+        "city": "Philadelphia",
+        "isActive": true
+    },
+    {
+        "id": 1610612743,
+        "abbreviation": "DEN",
+        "nickname": "Nuggets",
+        "city": "Denver",
+        "isActive": true
+    },
+    {
+        "id": 1610612763,
+        "abbreviation": "MEM",
+        "nickname": "Grizzlies",
+        "city": "Memphis",
+        "isActive": true
+    },
+    {
+        "id": 1610610031,
+        "abbreviation": "PIT",
+        "nickname": "Ironmen",
+        "city": "Pittsburgh",
+        "isActive": false
+    },
+    {
+        "id": 1610612759,
+        "abbreviation": "SAS",
+        "nickname": "Spurs",
+        "city": "San Antonio",
+        "isActive": true
+    },
+    {
+        "id": 1610612758,
+        "abbreviation": "SAC",
+        "nickname": "Kings",
+        "city": "Sacramento",
+        "isActive": true
+    },
+    {
+        "id": 1610610030,
+        "abbreviation": "INO",
+        "nickname": "Olympians",
+        "city": "Indianapolis",
+        "isActive": false
+    },
+    {
+        "id": 1610612762,
+        "abbreviation": "UTA",
+        "nickname": "Jazz",
+        "city": "Utah",
+        "isActive": true
+    },
+    {
+        "id": 1610610026,
+        "abbreviation": "CLR",
+        "nickname": "Rebels",
+        "city": "Cleveland",
+        "isActive": false
+    },
+    {
+        "id": 1610612742,
+        "abbreviation": "DAL",
+        "nickname": "Mavericks",
+        "city": "Dallas",
+        "isActive": true
+    },
+    {
+        "id": 1610612754,
+        "abbreviation": "IND",
+        "nickname": "Pacers",
+        "city": "Indiana",
+        "isActive": true
+    },
+    {
+        "id": 1610612739,
+        "abbreviation": "CLE",
+        "nickname": "Cavaliers",
+        "city": "Cleveland",
+        "isActive": true
+    }
+]
