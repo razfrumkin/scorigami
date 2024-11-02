@@ -1,11 +1,11 @@
 import { applyDecorators } from '@nestjs/common'
 import { TransformStringToNumber } from './transform-string-to-number.decorator'
-import { IsInt, Max, Min } from 'class-validator'
+import { IsInt, Max, Min, ValidationOptions } from 'class-validator'
 
-export const IsValidInt = () =>
+export const IsValidInt = (validationOptions?: { each: boolean }) =>
     applyDecorators(
-        TransformStringToNumber(),
-        IsInt(),
-        Min(-2147483648),
-        Max(2147483647)
+        TransformStringToNumber(validationOptions),
+        IsInt(validationOptions),
+        Min(-2147483648, validationOptions),
+        Max(2147483647, validationOptions)
     )

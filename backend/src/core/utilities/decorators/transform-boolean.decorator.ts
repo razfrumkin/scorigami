@@ -1,12 +1,18 @@
 import { Transform } from 'class-transformer'
 
-export const TransformBoolean = () =>
-    Transform(({ obj, key }) => {
-        const value = obj[key]
+const transform = (value: string | any): boolean | any => {
+    if (typeof value === 'string') {
+        return value === 'true'
+    }
 
-        if (typeof value === 'string') {
-            return obj[key] === 'true'
+    return value
+}
+
+export const TransformBoolean = (validationOptions?: { each: boolean }) =>
+    Transform(({ value }) => {
+        if (validationOptions?.each && Array.isArray(value)) {
+            return value.map(transform)
         }
 
-        return value
+        return transform(value)
     })

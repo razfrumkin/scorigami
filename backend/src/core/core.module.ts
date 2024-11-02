@@ -20,7 +20,8 @@ import { Team } from '../nba/team/entities/team.entity'
                 password: configService.getOrThrow<string>('database.password'),
                 database: configService.getOrThrow<string>('database.name'),
                 entities: [Team, Game],
-                synchronize: true
+                synchronize: true,
+                logging: ['query']
             })
         })
     ],

@@ -12,6 +12,7 @@ import { FindByIdDto } from 'src/core/utilities/dto/find-by-id.dto'
 import { FindGameOptionsRelationsDto } from './dto/find-game-options-relations.dto'
 import { FindByStringIdDto } from 'src/core/utilities/dto/find-by-string-id.dto'
 import { GameNotFoundError } from './errors/game-not-found.error'
+import { inspect } from 'util'
 
 @Injectable()
 export class GameService {
@@ -75,6 +76,8 @@ export class GameService {
     async find(findGameOptionsDto?: FindGameOptionsDto): Promise<Game[]> {
         const where = findGameOptionsWhere(findGameOptionsDto)
         const relations = findGameOptionsRelations(findGameOptionsDto)
+
+        console.log(inspect(where, { depth: 5, colors: true }))
 
         return await this.gameRepository.find({ where, relations })
     }

@@ -1,8 +1,18 @@
 import { Transform } from 'class-transformer'
 
-export const TransformStringToNumber = () =>
-    Transform(({ value }) => {
-        const parsed = Number(value)
+const transform = (value: string | any): number | any => {
+    const parsed = Number(value)
 
-        return isNaN(parsed) ? value : parsed
+    return isNaN(parsed) ? value : parsed
+}
+
+export const TransformStringToNumber = (validationOptions?: {
+    each: boolean
+}) =>
+    Transform(({ value }) => {
+        if (validationOptions?.each && Array.isArray(value)) {
+            return value.map(transform)
+        }
+
+        return transform(value)
     })

@@ -1,4 +1,4 @@
-import { IsDateString, IsOptional, IsString } from 'class-validator'
+import { IsArray, IsDateString, IsOptional, IsString } from 'class-validator'
 import { FindGameOptionsRelationsDto } from './find-game-options-relations.dto'
 import { IsValidInt } from 'src/core/utilities/decorators/is-valid-int.decorator'
 
@@ -32,10 +32,7 @@ export class FindGameOptionsDto extends FindGameOptionsRelationsDto {
     loserMatchup?: string
 
     @IsOptional()
-    @IsValidInt()
-    winnerId: number
-
-    @IsOptional()
-    @IsValidInt()
-    loserId: number
+    @IsArray()
+    @IsValidInt({ each: true })
+    participatedTeamsIds: number[]
 }

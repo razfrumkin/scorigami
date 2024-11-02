@@ -1,4 +1,11 @@
-import { Between, FindOptionsWhere, LessThan, MoreThan } from 'typeorm'
+import {
+    Between,
+    Brackets,
+    FindOptionsWhere,
+    In,
+    LessThan,
+    MoreThan
+} from 'typeorm'
 import { Game } from '../entities/game.entity'
 import { shake } from 'radash'
 import { FindGameOptionsDto } from '../dto/find-game-options.dto'
@@ -7,7 +14,7 @@ import { MAXIMUM_DATE } from 'src/core/utilities/constants/maximum-date.constant
 
 export const findGameOptionsWhere = (
     findGameOptionsDto?: FindGameOptionsDto
-): FindOptionsWhere<Game> => {
+): FindOptionsWhere<Game>[] => {
     const {
         season,
         startDate,
@@ -16,18 +23,33 @@ export const findGameOptionsWhere = (
         loserPoints,
         winnerMatchup,
         loserMatchup,
-        winnerId,
-        loserId
+        participatedTeamsIds
     } = findGameOptionsDto ?? {}
 
-    return shake({
-        season,
-        time: Between(startDate ?? MINIMUM_DATE, endDate ?? MAXIMUM_DATE),
-        winnerPoints,
-        loserPoints,
-        winnerMatchup,
-        loserMatchup,
-        winner: { id: winnerId },
-        loser: { id: loserId }
-    })
+    return [
+        shake({
+            season,
+            time: Between(startDate ?? MINIMUM_DATE, endDate ?? MAXIMUM_DATE),
+            winnerPoints,
+            loserPoints,
+            winnerMatchup,
+            loserMatchup,
+            winner:
+                participatedTeamsIds == null
+                    ? undefined
+                    : { id: In(participatedTeamsIds) }
+        }),
+        shake({
+            season,
+            time: Between(startDate ?? MINIMUM_DATE, endDate ?? MAXIMUM_DATE),
+            winnerPoints,
+            loserPoints,
+            winnerMatchup,
+            loserMatchup,
+            loser:
+                participatedTeamsIds == null
+                    ? undefined
+                    : { id: In(participatedTeamsIds) }
+        })
+    ]
 }
