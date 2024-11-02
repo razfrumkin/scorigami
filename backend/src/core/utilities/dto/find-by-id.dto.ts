@@ -1,6 +1,8 @@
-import { IsNumberString } from 'class-validator'
+import { IsValidInt } from '../decorators/is-valid-int.decorator'
+import { TransformStringToNumber } from '../decorators/transform-string-to-number.decorator'
 
 export class FindByIdDto {
-    @IsNumberString()
+    @TransformStringToNumber()
+    @IsValidInt()
     id: number
 }

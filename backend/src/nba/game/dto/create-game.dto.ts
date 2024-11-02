@@ -1,4 +1,6 @@
 import { IsDateString, IsInt, IsNotEmpty, IsString } from 'class-validator'
+import { IsValidInt } from 'src/core/utilities/decorators/is-valid-int.decorator'
+import { TransformTeamId } from 'src/nba/team/decorators/transform-team-id'
 
 export class CreateGameDto {
     @IsString()
@@ -12,10 +14,10 @@ export class CreateGameDto {
     @IsDateString()
     time: Date
 
-    @IsInt()
+    @IsValidInt()
     winnerPoints: number
 
-    @IsInt()
+    @IsValidInt()
     loserPoints: number
 
     @IsString()
@@ -26,9 +28,11 @@ export class CreateGameDto {
     @IsNotEmpty()
     loserMatchup: string
 
-    @IsInt()
+    @IsValidInt()
+    @TransformTeamId()
     winnerId: number
 
-    @IsInt()
+    @IsValidInt()
+    @TransformTeamId()
     loserId: number
 }

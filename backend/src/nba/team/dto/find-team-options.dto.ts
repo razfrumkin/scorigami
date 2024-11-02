@@ -2,7 +2,7 @@ import { IsBoolean, IsOptional, IsString } from 'class-validator'
 import { TransformBoolean } from 'src/core/utilities/decorators/transform-boolean.decorator'
 import { FindTeamOptionsRelationsDto } from './find-team-options-relations.dto'
 
-export class FindTeamOptionsWhereDto extends FindTeamOptionsRelationsDto {
+export class FindTeamOptionsDto extends FindTeamOptionsRelationsDto {
     @IsOptional()
     @IsString()
     abbreviation?: string

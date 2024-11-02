@@ -1,10 +1,12 @@
-import { Controller, Get, Param, Query } from '@nestjs/common'
+import { Controller, Get, Param, Query, UseInterceptors } from '@nestjs/common'
 import { TeamService } from './team.service'
 import { Team } from './entities/team.entity'
-import { FindTeamOptionsWhereDto } from './dto/find-team-options-where.dto'
 import { FindByIdDto } from '../../core/utilities/dto/find-by-id.dto'
 import { FindTeamOptionsRelationsDto } from './dto/find-team-options-relations.dto'
+import { TeamInterceptor } from './team.interceptor'
+import { FindTeamOptionsDto } from './dto/find-team-options.dto'
 
+@UseInterceptors(TeamInterceptor)
 @Controller('nba/teams')
 export class TeamController {
     constructor(private readonly teamService: TeamService) {}
@@ -22,8 +24,8 @@ export class TeamController {
 
     @Get()
     async find(
-        @Query() findTeamOptionsWhereDto?: FindTeamOptionsWhereDto
+        @Query() findTeamOptionsDto?: FindTeamOptionsDto
     ): Promise<Team[]> {
-        return this.teamService.find(findTeamOptionsWhereDto)
+        return await this.teamService.find(findTeamOptionsDto)
     }
 }

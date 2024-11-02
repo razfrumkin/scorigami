@@ -1,13 +1,12 @@
 import { FindOptionsWhere, ILike } from 'typeorm'
 import { Team } from '../entities/team.entity'
-import { FindTeamOptionsWhereDto } from '../dto/find-team-options-where.dto'
 import { shake } from 'radash'
+import { FindTeamOptionsDto } from '../dto/find-team-options.dto'
 
 export const findTeamOptionsWhere = (
-    findTeamOptionsWhereDto?: FindTeamOptionsWhereDto
+    findTeamOptionsDto?: FindTeamOptionsDto
 ): FindOptionsWhere<Team> => {
-    const { abbreviation, nickname, city, isActive } =
-        findTeamOptionsWhereDto ?? {}
+    const { abbreviation, nickname, city, isActive } = findTeamOptionsDto ?? {}
 
     return shake({
         abbreviation: ILike(`%${abbreviation ?? ''}%`),

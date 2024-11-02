@@ -1,6 +1,6 @@
 import { FindOptionsRelations } from 'typeorm'
-import { FindTeamOptionsRelationsDto } from '../dto/find-team-options-relations.dto'
 import { Team } from '../entities/team.entity'
+import { FindTeamOptionsRelationsDto } from '../dto/find-team-options-relations.dto'
 
 export const findTeamOptionsRelations = (
     findTeamOptionsRelationsDto?: FindTeamOptionsRelationsDto

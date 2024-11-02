@@ -5,6 +5,13 @@ import { Repository } from 'typeorm'
 import { CreateGamesDto } from './dto/create-games.dto'
 import { TeamService } from '../team/team.service'
 import { Team } from '../team/entities/team.entity'
+import { FindGameOptionsDto } from './dto/find-game-options.dto'
+import { findGameOptionsWhere } from './repository/find-game-options-where'
+import { findGameOptionsRelations } from './repository/find-game-options-relations'
+import { FindByIdDto } from 'src/core/utilities/dto/find-by-id.dto'
+import { FindGameOptionsRelationsDto } from './dto/find-game-options-relations.dto'
+import { FindByStringIdDto } from 'src/core/utilities/dto/find-by-string-id.dto'
+import { GameNotFoundError } from './errors/game-not-found.error'
 
 @Injectable()
 export class GameService {
@@ -53,10 +60,39 @@ export class GameService {
         )
     }
 
-    async find(): Promise<Game[]> {
-        return this.gameRepository.find({
-            relations: { winner: true, loser: true }
+    async findOneOrNull(
+        findByStringIdDto: FindByStringIdDto,
+        findGameOptionsRelationsDto?: FindGameOptionsRelationsDto
+    ): Promise<Game | undefined> {
+        const relations = findGameOptionsRelations(findGameOptionsRelationsDto)
+
+        return await this.gameRepository.findOne({
+            where: findByStringIdDto,
+            relations
         })
+    }
+
+    async find(findGameOptionsDto?: FindGameOptionsDto): Promise<Game[]> {
+        const where = findGameOptionsWhere(findGameOptionsDto)
+        const relations = findGameOptionsRelations(findGameOptionsDto)
+
+        return await this.gameRepository.find({ where, relations })
+    }
+
+    async findOne(
+        findByStringIdDto: FindByStringIdDto,
+        findGameOptionsRelationsDto?: FindGameOptionsRelationsDto
+    ): Promise<Game> {
+        const game = await this.findOneOrNull(
+            findByStringIdDto,
+            findGameOptionsRelationsDto
+        )
+
+        if (game == null) {
+            throw new GameNotFoundError(findByStringIdDto)
+        }
+
+        return game
     }
 
     async findAvailableSeasons(): Promise<string[]> {
