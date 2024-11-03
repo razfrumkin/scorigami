@@ -6,7 +6,7 @@ import { TeamSeed } from './nba/team/team.seed'
 import { json, urlencoded } from 'express'
 
 async function bootstrap() {
-    const app = await NestFactory.create(AppModule)
+    const app = await NestFactory.create(AppModule, { cors: true })
 
     const reflector = app.get(Reflector)
     const configService = app.get(ConfigService)
