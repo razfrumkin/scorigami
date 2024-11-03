@@ -16,7 +16,7 @@ export const findGameOptionsWhere = (
     findGameOptionsDto?: FindGameOptionsDto
 ): FindOptionsWhere<Game>[] => {
     const {
-        season,
+        seasons,
         startDate,
         endDate,
         winnerPoints,
@@ -28,7 +28,7 @@ export const findGameOptionsWhere = (
 
     return [
         shake({
-            season,
+            season: seasons == null ? undefined : In(seasons),
             time: Between(startDate ?? MINIMUM_DATE, endDate ?? MAXIMUM_DATE),
             winnerPoints,
             loserPoints,
@@ -40,7 +40,7 @@ export const findGameOptionsWhere = (
                     : { id: In(participatedTeamsIds) }
         }),
         shake({
-            season,
+            season: seasons == null ? undefined : In(seasons),
             time: Between(startDate ?? MINIMUM_DATE, endDate ?? MAXIMUM_DATE),
             winnerPoints,
             loserPoints,

@@ -4,8 +4,9 @@ import { IsValidInt } from 'src/core/utilities/decorators/is-valid-int.decorator
 
 export class FindGameOptionsDto extends FindGameOptionsRelationsDto {
     @IsOptional()
-    @IsString()
-    season?: string
+    @IsArray()
+    @IsString({ each: true })
+    seasons?: string[]
 
     @IsOptional()
     @IsDateString()
