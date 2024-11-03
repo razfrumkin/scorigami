@@ -77,8 +77,6 @@ export class GameService {
         const where = findGameOptionsWhere(findGameOptionsDto)
         const relations = findGameOptionsRelations(findGameOptionsDto)
 
-        console.log(inspect(where, { depth: 5, colors: true }))
-
         return await this.gameRepository.find({ where, relations })
     }
 
