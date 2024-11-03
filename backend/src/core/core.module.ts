@@ -14,11 +14,12 @@ import { Team } from '../nba/team/entities/team.entity'
             inject: [ConfigService],
             useFactory: async (configService: ConfigService) => ({
                 type: 'postgres',
-                host: configService.getOrThrow<string>('database.host'),
-                port: configService.getOrThrow<number>('database.port'),
-                username: configService.getOrThrow<string>('database.username'),
-                password: configService.getOrThrow<string>('database.password'),
-                database: configService.getOrThrow<string>('database.name'),
+                url: configService.get<string>('database.connectionString'),
+                host: configService.get<string>('database.host'),
+                port: configService.get<number>('database.port'),
+                username: configService.get<string>('database.username'),
+                password: configService.get<string>('database.password'),
+                database: configService.get<string>('database.name'),
                 entities: [Team, Game],
                 synchronize: true
             })

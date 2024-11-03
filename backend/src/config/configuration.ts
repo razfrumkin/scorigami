@@ -4,6 +4,7 @@ export const configuration = () => ({
     requestBodySizeLimit: process.env.REQUEST_BODY_SIZE_LIMIT,
     adminPassword: process.env.ADMIN_PASSWORD,
     database: {
+        connectionString: process.env.CONNECTION_STRING,
         host: process.env.DATABASE_HOST,
         port: parseInt(process.env.DATABASE_PORT) || 5432,
         username: process.env.DATABASE_USERNAME,
