@@ -137,7 +137,7 @@
         "abbreviation": "BOM",
         "nickname": "Bombers",
         "city": "St. Louis",
-        "isActive": true
+        "isActive": false
     },
     {
         "id": 1610612765,
