@@ -1,21 +1,21 @@
-import { useSeasons } from '../season/hooks/useSeasons'
-import { SeasonsProvider } from '../season/providers/SeasonsProvider'
+import { useTeams } from '../team/hooks/useTeams'
+import { TeamsProvider } from '../team/providers/SeasonsProvider'
 
 export const NBAPage = () => {
     return (
-        <SeasonsProvider>
-            <TemprarySeasonsList />
-        </SeasonsProvider>
+        <TeamsProvider options={{ isActive: true }}>
+            <TemporaryTeamsList />
+        </TeamsProvider>
     )
 }
 
-const TemprarySeasonsList = () => {
-    const seasons = useSeasons()
+const TemporaryTeamsList = () => {
+    const teams = useTeams()
 
     return (
         <div>
-            {seasons.map(season => (
-                <span key={season}>{season}</span>
+            {teams.map(team => (
+                <span key={team.id}>{JSON.stringify(team)}</span>
             ))}
         </div>
     )
