@@ -10,11 +10,11 @@ export class FindGameOptionsDto extends FindGameOptionsRelationsDto {
 
     @IsOptional()
     @IsDateString()
-    startDate?: string
+    startDate?: Date
 
     @IsOptional()
     @IsDateString()
-    endDate?: string
+    endDate?: Date
 
     @IsOptional()
     @IsValidInt()

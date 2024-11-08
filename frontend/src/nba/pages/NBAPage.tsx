@@ -1,21 +1,21 @@
-import { useTeams } from '../team/hooks/useTeams'
-import { TeamsProvider } from '../team/providers/SeasonsProvider'
+import { useGames } from '../game/hooks/useGames'
+import { GamesProvider } from '../game/providers/GamesProvider'
 
 export const NBAPage = () => {
     return (
-        <TeamsProvider options={{ isActive: true }}>
-            <TemporaryTeamsList />
-        </TeamsProvider>
+        <GamesProvider options={{ seasons: ['2024-25'] }}>
+            <TemporaryGamesList />
+        </GamesProvider>
     )
 }
 
-const TemporaryTeamsList = () => {
-    const teams = useTeams()
+const TemporaryGamesList = () => {
+    const games = useGames()
 
     return (
         <div>
-            {teams.map(team => (
-                <span key={team.id}>{JSON.stringify(team)}</span>
+            {games.map(game => (
+                <span key={game.id}>{JSON.stringify(game)}</span>
             ))}
         </div>
     )
