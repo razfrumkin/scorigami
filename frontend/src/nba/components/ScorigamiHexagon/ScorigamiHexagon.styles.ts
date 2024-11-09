@@ -5,8 +5,7 @@ export const useStyles = tss
     .withParams<{ fill: Property.Fill }>()
     .create(({ fill }) => ({
         root: {
-            fill,
-            stroke: '#555'
+            fill
         },
 
         hovered: {
