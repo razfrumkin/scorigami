@@ -5,11 +5,7 @@ export const useStyles = tss
     .withParams<{ fill: Property.Fill }>()
     .create(({ fill }) => ({
         root: {
-            fill
-        },
-
-        hovered: {
-            fill: 'lightgrey',
+            fill,
             cursor: 'pointer'
         }
     }))
