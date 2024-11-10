@@ -61,7 +61,13 @@ export const ScorigamiChart: FC<ScorigamiChartProps> = ({}) => {
                     const score = `${point.x}-${point.x - point.y}`
 
                     return (
-                        <Tooltip key={index} title={score} arrow>
+                        <Tooltip
+                            key={index}
+                            title={`${score} (${point.value} ${
+                                point.value === 1 ? 'game' : 'games'
+                            })`}
+                            arrow
+                        >
                             <ScorigamiHexagon
                                 value={point.value}
                                 path={path}
