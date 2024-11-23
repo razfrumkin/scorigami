@@ -11,5 +11,5 @@ A web application written in TypeScript that fetches and displays a Scorigami ch
 ## Technologies
 
 - **Frontend**: [React](https://github.com/facebook/react) with [MaterialUI](https://github.com/mui/material-ui)
-- **Backend**: [NestJS](https://github.com/nestjs/nest) with [TypeORM](https://github.com/typeorm)
+- **Backend**: [NestJS](https://github.com/nestjs/nest) with [TypeORM](https://github.com/typeorm/typeorm)
 - **Database**: [PostgreSQL](https://www.postgresql.org)
